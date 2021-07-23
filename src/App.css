@@ -1,0 +1,31 @@
+@media only screen and (max-width: 768px) {
+  /*for mobile phones*/
+  
+  #add{
+    display: none;
+  }
+  #addbtn{
+    display: inline;
+  }
+  #addspan{
+    margin-left: 75%;
+  }
+}
+
+@media screen and (min-width: 768px){
+    /*for large screens*/
+
+    #dashboard-item {
+      width: 80%;
+    }
+    #addd{
+      display: none;
+    }
+    #addspan{
+      margin-left: 60%;
+    }
+    #addpform{
+      padding-left: 10%;
+      padding-right: 10%;
+    }
+}
