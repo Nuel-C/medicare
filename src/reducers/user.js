@@ -1,7 +1,9 @@
 const user = {
     username:'',
     patients: 0,
-    patientsList:[]
+    patientsList:[],
+    encounters:0,
+    encountersList:[]
 }
 
 const userReducer = (state = user, action) => {

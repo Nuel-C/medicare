@@ -18,6 +18,9 @@
     #dashboard-item {
       width: 80%;
     }
+    #form{
+      padding: 20%;
+    }
     #addd{
       display: none;
     }
@@ -28,4 +31,7 @@
       padding-left: 10%;
       padding-right: 10%;
     }
+    /* #dashboard-item:hover{
+      transform: scale(1.2);
+    } */
 }

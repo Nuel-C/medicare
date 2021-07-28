@@ -1,15 +1,16 @@
 const mongoose = require('mongoose')
 const Patient = require('./patient')
+const Encounter = require('./encounter')
 
 //doctor schema
 const user = new mongoose.Schema({
     username: {
         type: String
     },
-    surname: {
+    password: {
         type: String
     },
-    password: {
+    surname: {
         type: String
     },
     name: {
@@ -35,6 +36,12 @@ const user = new mongoose.Schema({
         {
             type: mongoose.Schema.Types.ObjectId,
             ref: 'Patient'
+        }
+    ],
+    encounters: [
+        {
+            type: mongoose.Schema.Types.ObjectId,
+            ref: 'Encounter'
         }
     ]
 })

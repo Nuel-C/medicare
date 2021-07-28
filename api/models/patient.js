@@ -1,20 +1,22 @@
 const mongoose = require('mongoose')
+const Encounter = require('./encounter')
+
 
 //patient schema
 const patient = new mongoose.Schema({
+    surname: {
+        type: String
+    },
+    name: {
+        type: String
+    },
     handler: {
         type: String
     },
     username: {
         type: String
     },
-    surname: {
-        type: String
-    },
     password: {
-        type: String
-    },
-    name: {
         type: String
     },
     age: {
@@ -30,7 +32,7 @@ const patient = new mongoose.Schema({
         type: Number
     },
     bmi: {
-        type: Number
+        type: String
     },
     ward: {
         type: String
@@ -44,7 +46,13 @@ const patient = new mongoose.Schema({
     date: {
         type: Date,
         default: Date.now
-    }
+    },
+    // encounters: [
+    //     {
+    //         type: mongoose.Schema.Types.ObjectId,
+    //         ref: 'Encounter'
+    //     }
+    // ]
 })
 
 module.exports = mongoose.model('Patient', patient)

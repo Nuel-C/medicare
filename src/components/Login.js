@@ -39,7 +39,9 @@ export const Login = () => {
             const userDetails = {
                 username: username,
                 patients: res.data.patients,
-                patientsList: res.data.patientsList
+                patientsList: res.data.patientsList,
+                encounters: res.data.encounters,
+                encountersList: res.data.encountersList
             }
 
             dispatch(login())
@@ -66,7 +68,7 @@ export const Login = () => {
                     pathname: "/dashboard"
                   }} /> : null
             }
-            <div className='container' style={{padding: '20%', paddingTop: '10%'}}>
+            <div id='form' className='container' style={{paddingTop: '10%'}}>
                     <h2 style={{textAlign:'center'}}>Log In</h2>
                     <div className='form-div'>
                     <span style={{color:'green'}}>{message}</span>

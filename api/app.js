@@ -46,15 +46,20 @@ app.post('/signup', (req, res)=>{
             await newUser.save((err, reg)=>{
 
                 Patient.find({handler: req.body.username}, (err, patientsList)=>{
-                    var c = {
-                        success : true,
-                        msg: "Login Successful",
-                        username: reg.username,
-                        id: reg._id,
-                        patients: reg.patients.length,
-                        patientsList: patientsList
-                    }
-                    res.send(c)
+                    Encounter.find({handler: req.body.username}, (err, encountersList)=>{
+                        var c = {
+                            success : true,
+                            msg: "Login Successful",
+                            username: reg.username,
+                            id: reg._id,
+                            patients: reg.patients.length,
+                            patientsList: patientsList,
+                            encounters: reg.encounters.length,
+                            encountersList: encountersList
+                        }
+                        res.send(c)
+                    })
+                    
                 })
             })  
         }
@@ -81,15 +86,20 @@ app.post('/login', (req, res)=>{
             bcrypt.compare(req.body.password, password, (err, isMatch)=>{
                 if(isMatch === true){
                     Patient.find({handler: req.body.username}, (err, patientsList)=>{
-                        var c = {
-                            success : true,
-                            message: "Login Successful",
-                            username: user.username,
-                            id: user._id,
-                            patients: user.patients.length,
-                            patientsList: patientsList
-                        }
-                        res.send(c)
+                        Encounter.find({handler: req.body.username}, (err,encountersList)=>{
+                            var c = {
+                                success : true,
+                                message: "Login Successful",
+                                username: user.username,
+                                id: user._id,
+                                patients: user.patients.length,
+                                patientsList: patientsList,
+                                encounters: user.encounters.length,
+                                encountersList: encountersList
+                            }
+                            res.send(c)
+                        })
+                        
                     })         
                 }else{
                     var c = {
@@ -106,41 +116,85 @@ app.post('/login', (req, res)=>{
 app.post('/addpatient', (req, res)=>{
     User.findOne({username: req.body.user}, (err, user)=>{
         if(err) throw err
-        if(user){
-            Patient.create({
-                handler: req.body.user,
-                username: req.body.username,
-                surname: req.body.surname,
-                password: req.body.password,
-                name: req.body.name,
-                age: req.body.age,
-                gender: req.body.gender,
-                height: req.body.height,
-                weight: req.body.weight,
-                bmi: req.body.bmi,
-                ward: req.body.ward,
-                lga: req.body.lga,
-                state: req.body.state
-            }, (err, patient)=>{
-                console.log(patient)
-                user.patients.push(patient)
-                user.save(function(err, save){
-                    if(err){
-                        console.log(err);
-                    }else{
-                        Patient.find({handler: req.body.user}, (err, patientsList)=>{
-                            res.send({success: true, patients: user.patients.length, patientsList: patientsList})
-                        })
-                    }
-                });
-            })
-        }
+        Patient.find({surname: req.body.surname, name: req.body.name}, (err, data)=>{
+            if(data.length != 0){
+                console.log(data)
+                res.send({success: false, message: 'Patient Already Exists'})
+            }else if(data.length === 0 ){
+                if(user){
+                    Patient.create({
+                        handler: req.body.user,
+                        username: req.body.username,
+                        surname: req.body.surname,
+                        password: req.body.password,
+                        name: req.body.name,
+                        age: req.body.age,
+                        gender: req.body.gender,
+                        height: req.body.height,
+                        weight: req.body.weight,
+                        bmi: req.body.bmi,
+                        ward: req.body.ward,
+                        lga: req.body.lga,
+                        state: req.body.state
+                    }, (err, patient)=>{
+                        console.log(patient)
+                        user.patients.push(patient)
+                        user.save(function(err, save){
+                            if(err){
+                                console.log(err);
+                            }else{
+                                Patient.find({handler: req.body.user}, (err, patientsList)=>{
+                                    res.send({success: true, patients: user.patients.length, patientsList: patientsList})
+                                })
+                            }
+                        });
+                    })
+                }
+            }
+        })
     })
 })
 
-app.post('/getpatients', (req, res)=>{
-    Patient.find({handler: req.body.handler}, (err, patients)=>{
-        res.send(patients)
+app.post('/addencounter', (req, res)=>{
+    User.findOne({username: req.body.user}, (err, user)=>{
+        if(err) throw err
+        Patient.findOne({surname: req.body.surname, name: req.body.name}, (err, data)=>{
+            if(!data){
+                res.send({message: 'Patient Does not Exist', success: false})
+            }else if(data){
+                if(user){
+                    Encounter.create({
+                        handler: req.body.user,
+                        surname: req.body.surname,
+                        name: req.body.name,
+                        age: req.body.age,
+                        gender: req.body.gender,
+                        height: req.body.height,
+                        weight: req.body.weight,
+                        bmi: req.body.bmi,
+                        type: req.body.type,
+                        bp: req.body.bp,
+                        temperature: req.body.temperature,
+                        rr: req.body.rr,
+                        complaint: req.body.complaint,
+                        diagnosis: req.body.diagnosis,
+                        treatment: req.body.treatment,
+                    }, (err, encounter)=>{
+                        console.log(encounter)
+                        user.encounters.push(encounter)
+                        user.save(function(err, save){
+                            if(err){
+                                console.log(err);
+                            }else{
+                                Encounter.find({handler: req.body.user}, (err, encountersList)=>{
+                                    res.send({success: true, encounters: user.encounters.length, encountersList: encountersList})
+                                })
+                            }
+                        });
+                    })
+                };
+            }
+        })
     })
 })
 

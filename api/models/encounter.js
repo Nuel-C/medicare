@@ -2,6 +2,9 @@ const mongoose = require('mongoose')
 
 //encounter schema
 const encounter = new mongoose.Schema({
+    handler: {
+        type: String
+    },
     surname: {
         type: String
     },
