@@ -183,7 +183,7 @@ export const Dashboard = () => {
                 <div className='col-sm-6' style={{margin:'0%'}}>
                     <div id = 'dashboard-item' style={{ borderRadius: '10px', marginTop:'5%', padding: '5%', margin: '5%', backgroundColor: 'rgb(15, 15, 15)'}}>
                         <div style={{display: 'flex', flexDirection: 'row', justifyContent: 'space-between'}}>
-                            <h3 style={{ padding: '5px'}}>Patients</h3><h3 style={{textAlign:'right', padding: '5px'}}>{user.patients}</h3>
+                            <h3 style={{ padding: '5px'}}><Link to='/patients'><button className='btn btn-success btn-lg'><img src={userimg} alt='' style={{height:'2rem', width:'2rem', borderRadius:'50%'}}/> Patients</button></Link></h3><h3 style={{textAlign:'right', padding: '5px'}}>{user.patients}</h3>
                         </div>
                         <hr style={{border: '1px solid white'}}/>
 
@@ -199,7 +199,7 @@ export const Dashboard = () => {
                         }
                         <br/>
                         
-                        <span id='addspan' style={{ marginTop:'10%'}}><button onClick={showAddPatient} id='addbtn' className='btn btn-success btn-sm' style={{borderRadius:'50%', paddingLeft:'3%', paddingRight:'3%'}}>+</button> <span id='add'>Add Patient</span><span id='addd'>New</span></span>
+                        <span id='addspan' style={{ marginTop:'10%'}}><button onClick={showAddPatient} id='addbtn' className='btn btn-success btn-sm' style={{borderRadius:'50%', paddingLeft:'3%', paddingRight:'3%'}}>+</button> </span>
                         
                         <div id='addpform' style={{marginTop:'10%', display: showAddP ? 'block' : 'none'}}>
                             <hr style={{border: '1px solid white'}}/><h2 style={{textAlign:'center'}}>Add Patient</h2><hr style={{border: '1px solid white'}}/>
@@ -312,7 +312,7 @@ export const Dashboard = () => {
                 <div className='col-sm-6' style={{margin:'0%'}}>
                     <div id = 'dashboard-item' style={{ borderRadius: '10px', marginTop:'5%', padding: '5%', margin: '5%', backgroundColor: 'rgb(15, 15, 15)'}}>
                         <div style={{display: 'flex', flexDirection: 'row', justifyContent: 'space-between'}}>
-                            <h3 style={{ padding: '5px'}}>Encounters</h3><h3 style={{textAlign:'right', padding: '5px'}}>{user.encounters}</h3>
+                            <h3 style={{ padding: '5px'}}><Link to='/encounters'><button className='btn btn-success btn-lg'><img src={imgg} alt='' style={{height:'2rem'}} /> Encounters</button></Link></h3><h3 style={{textAlign:'right', padding: '5px'}}>{user.encounters}</h3>
                         </div>
                         <hr style={{border: '1px solid white'}}/>
                         {
@@ -325,7 +325,7 @@ export const Dashboard = () => {
                             }).reverse()
                         }
                         <br/>
-                        <span id='addspan' style={{ marginTop:'10%'}}><button onClick={showAddEncounter} id='addbtn' className='btn btn-success btn-sm' style={{borderRadius:'50%', paddingLeft:'3%', paddingRight:'3%'}}>+</button> <span id='add'>Add Encounter</span><span id='addd'>New</span></span>
+                        <span id='addspan' style={{ marginTop:'10%'}}><button onClick={showAddEncounter} id='addbtn' className='btn btn-success btn-sm' style={{borderRadius:'50%', paddingLeft:'3%', paddingRight:'3%'}}>+</button></span>
 
                         <div id='addpform' style={{marginTop:'10%', display: showAddE ? 'block' : 'none'}}>
                             <hr style={{border: '1px solid white'}}/><h2 style={{textAlign:'center'}}>Add Encounter</h2><hr style={{border: '1px solid white'}}/>
