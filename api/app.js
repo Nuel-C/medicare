@@ -13,8 +13,8 @@ const { O_CREAT } = require('constants')
 
 
 //Connect to DB
-// mongoose.connect('mongodb+srv://Nuel:chuks@cluster0.ldv66.mongodb.net/medicare?retryWrites=true&w=majority', {useNewUrlParser: true, useUnifiedTopology: true, useFindAndModify: false})
-mongoose.connect('mongodb://localhost/medicare', {useNewUrlParser: true, useUnifiedTopology: true})
+mongoose.connect('mongodb+srv://Nuel:chuks@cluster0.ldv66.mongodb.net/mediicare?retryWrites=true&w=majority', {useNewUrlParser: true, useUnifiedTopology: true, useFindAndModify: false})
+// mongoose.connect('mongodb://localhost/medicare', {useNewUrlParser: true, useUnifiedTopology: true})
 
 
 //Middleware

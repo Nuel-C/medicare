@@ -35,33 +35,71 @@ export const Patients = () => {
             </div>
 
             <div className='container' style={{marginTop:'5%'}}>
-                <h5>Patients Table</h5>
-            <table id='table' className='container'>
-                <tbody>
-                    <tr>
-                        <th>Surname</th>
-                        <th>Name</th>
-                        <th>Gender</th>
-                        <th>Age</th>
-                        <th>View</th>
-                    </tr>
+
                 {
                     user.patientsList.map(dat => {
                         return(
-                            
-                                <tr key={dat._id}>
-                                    <td>{dat.surname}</td>
-                                    <td>{dat.name}</td>
-                                    <td>{dat.gender}</td>
-                                    <td>{dat.age}</td>
-                                    <td><Link to={{pathname: '/patientdetails', state:{id: dat._id}}}><button className='btn btn-success'>View</button></Link></td>
-                                </tr> 
+                            <div id='patient'>
+                                <div key={dat._id} className='container' style={{background:'rgb(15, 15, 15)', borderRadius:'10px'}}>
+                                    <div className='row'>
+                                        <div className='col-sm-6' style={{paddingTop:'3%'}}>
+                                            <p style={{background:'blue', paddingLeft:'2%', borderRadius:'10px'}}>Date: {dat.date}</p>
+                                            <p style={{background:'blue', paddingLeft:'2%', borderRadius:'10px'}}>Name: {dat.surname + ' ' + dat.name}</p>
+                                            <p style={{background:'blue', paddingLeft:'2%', borderRadius:'10px'}}>Username: {dat.username}</p>
+                                            <p style={{background:'blue', paddingLeft:'2%', borderRadius:'10px'}}>B.M.I: {dat.bmi}</p>
+                                            <p id='gender' style={{background:'blue', paddingLeft:'2%', borderRadius:'10px'}}>Gender: {dat.gender}</p>
+                                        </div>
+                                        <div className='col-sm-6' style={{paddingTop:'4%', paddingLeft:'30%'}} id='age'>
+                                            <button className="btn btn-success btn-xlg" style={{padding:'30%', borderRadius:'50%'}}>{dat.age}</button>
+                                        </div>
+                                    </div>
+                                    <hr style={{border: '1px solid white'}}/>
+
+                                    <div>
+                                        <div style={{display:'flex', flexDirection:'row', justifyContent:'space-around', marginTop:'5%'}}>
+                                            <div id='agee' style={{textAlign:'center', padding:'5%', paddingTop:'2%', paddingBottom:'2%', borderRadius:'10px'}}>
+                                                <p>Age</p>
+                                                <p>{dat.age}</p>
+                                            </div>
+                                            <div style={{textAlign:'center', padding:'5%', paddingTop:'2%', paddingBottom:'2%', borderRadius:'10px'}}>
+                                                <p>Height</p>
+                                                <p>{dat.height}</p>
+                                            </div>
+                                            <div style={{textAlign:'center', padding:'5%', paddingTop:'2%', paddingBottom:'2%', borderRadius:'10px'}}>
+                                                <p>Weight</p>
+                                                <p>{dat.weight}</p>
+                                            </div>
+                                            <div id='genderr' style={{textAlign:'center', padding:'5%', paddingTop:'2%', paddingBottom:'2%', borderRadius:'10px'}}>
+                                                <p>Gender</p>
+                                                <p>{dat.gender}</p>
+                                            </div>
+                                        </div>
+                                        <hr style={{border: '1px solid white'}}/>
+
+
+                                        <div style={{display:'flex', flexDirection:'row', justifyContent:'space-around', marginTop:'5%'}}>
+                                            <div style={{textAlign:'center', padding:'5%', paddingTop:'2%', paddingBottom:'2%', borderRadius:'10px'}}>
+                                                <p>Ward</p>
+                                                <p>{dat.ward}</p>
+                                            </div>
+                                            <div style={{textAlign:'center', padding:'5%', paddingTop:'2%', paddingBottom:'2%', borderRadius:'10px'}}>
+                                                <p>L.G.A</p>
+                                                <p>{dat.lga}</p>
+                                            </div>
+                                            <div style={{textAlign:'center', padding:'5%', paddingTop:'2%', paddingBottom:'2%', borderRadius:'10px'}}>
+                                                <p>State</p>
+                                                <p>{dat.state}</p>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                </div>
+                                <br/><br/>
+                            </div>
                             
                          ) 
                     }).reverse()
                 }
-                </tbody>
-            </table>
 
             </div>
             
