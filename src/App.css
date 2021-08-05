@@ -18,11 +18,7 @@ td{
   padding-bottom: 3px;
 }
 
-tr:hover{
-  background-color: rgb(233, 230, 230);
-  color: black;
-  border-left: 1px solid black;
-} 
+ 
 
 
 @media only screen and (max-width: 768px) {

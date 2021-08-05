@@ -192,7 +192,7 @@ export const Dashboard = () => {
                             user.patientsList.slice(0, 3).map(list => {
                                 return(
                                     <ul key={list._id}>
-                                    <li  style={{background:'blue', borderRadius:'10px', paddingLeft:'2%'}}>{list.surname + " "+ list.name}</li>
+                                    <li  style={{background:'#198754', borderRadius:'10px', paddingLeft:'2%'}}>{list.surname + " "+ list.name}</li>
                                     </ul>
                                 ) 
                             }).reverse()
@@ -319,7 +319,7 @@ export const Dashboard = () => {
                             user.encountersList.slice(0, 3).map(list => {
                                 return(
                                     <ul key={list._id}>
-                                    <li  style={{background:'blue', borderRadius:'10px', paddingLeft:'2%'}}>{list.surname + " "+ list.name}</li>
+                                    <li  style={{background:'#198754', borderRadius:'10px', paddingLeft:'2%'}}>{list.surname + " "+ list.name}</li>
                                     </ul>
                                 ) 
                             }).reverse()

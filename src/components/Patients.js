@@ -43,10 +43,10 @@ export const Patients = () => {
                                 <div key={dat._id} className='container' style={{background:'rgb(15, 15, 15)', borderRadius:'10px'}}>
                                     <div className='row'>
                                         <div className='col-sm-6' style={{paddingTop:'3%'}}>
-                                            <p style={{background:'blue', paddingLeft:'2%', borderRadius:'10px'}}>Date: {dat.date}</p>
-                                            <p style={{background:'blue', paddingLeft:'2%', borderRadius:'10px'}}>Name: {dat.surname + ' ' + dat.name}</p>
-                                            <p style={{background:'blue', paddingLeft:'2%', borderRadius:'10px'}}>Username: {dat.username}</p>
-                                            <p style={{background:'blue', paddingLeft:'2%', borderRadius:'10px'}}>B.M.I: {dat.bmi}</p>
+                                            <p style={{background:'#198754', paddingLeft:'2%', borderRadius:'10px'}}>Date: {dat.date}</p>
+                                            <p style={{background:'#198754', paddingLeft:'2%', borderRadius:'10px'}}>Name: {dat.surname + ' ' + dat.name}</p>
+                                            <p style={{background:'#198754', paddingLeft:'2%', borderRadius:'10px'}}>Username: {dat.username}</p>
+                                            <p style={{background:'#198754', paddingLeft:'2%', borderRadius:'10px'}}>B.M.I: {dat.bmi}</p>
                                             <p id='gender' style={{background:'blue', paddingLeft:'2%', borderRadius:'10px'}}>Gender: {dat.gender}</p>
                                         </div>
                                         <div className='col-sm-6' style={{paddingTop:'4%', paddingLeft:'30%'}} id='age'>

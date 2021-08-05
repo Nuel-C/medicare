@@ -40,7 +40,7 @@ export const EncounterDetails = (props) => {
                             
                             return(   
                                 <div className='container' style={{marginTop:'5%'}} key={dat._id}>
-                                    <h5 style={{background:'blue'}}>Patients Details</h5><br/>
+                                    <h5 style={{background:'#198754'}}>Encounter Details</h5><br/>
                                     <table className='container'>
                                         <tbody>
                                             <tr>
