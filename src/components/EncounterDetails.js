@@ -44,67 +44,67 @@ export const EncounterDetails = (props) => {
                                     <table className='container'>
                                         <tbody>
                                             <tr>
-                                                <th style={{width:'20%', borderBottom:'1px solid black'}}>Surname</th>
+                                                <th style={{width:'20%', borderBottom:'1px solid black', background:'#198754'}}>Surname</th>
                                                 <td style={{width:'80%', textAlign:'left', paddingLeft:'2%'}}>{dat.surname}</td>
                                             </tr>
                                             <tr>
-                                                <th style={{width:'20%', borderBottom:'1px solid black'}}>Name</th>
+                                                <th style={{width:'20%', borderBottom:'1px solid black', background:'#198754'}}>Name</th>
                                                 <td style={{width:'80%', textAlign:'left', paddingLeft:'2%'}}>{dat.name}</td>
                                             </tr>
                                             <tr>
-                                                <th style={{width:'20%', borderBottom:'1px solid black'}}>Username</th>
+                                                <th style={{width:'20%', borderBottom:'1px solid black', background:'#198754'}}>Username</th>
                                                 <td style={{width:'80%', textAlign:'left', paddingLeft:'2%'}}>{dat.username}e</td>
                                             </tr>
                                             <tr>
-                                                <th style={{width:'20%', borderBottom:'1px solid black'}}>Age</th>
+                                                <th style={{width:'20%', borderBottom:'1px solid black', background:'#198754'}}>Age</th>
                                                 <td style={{width:'80%', textAlign:'left', paddingLeft:'2%'}}>{dat.age}</td>
                                             </tr>
                                             <tr>
-                                                <th style={{width:'20%', borderBottom:'1px solid black'}}>Gender</th>
+                                                <th style={{width:'20%', borderBottom:'1px solid black', background:'#198754'}}>Gender</th>
                                                 <td style={{width:'80%', textAlign:'left', paddingLeft:'2%'}}>{dat.gender}</td>
                                             </tr>
                                             <tr>
-                                                <th style={{width:'20%', borderBottom:'1px solid black'}}>Height</th>
+                                                <th style={{width:'20%', borderBottom:'1px solid black', background:'#198754'}}>Height</th>
                                                 <td style={{width:'80%', textAlign:'left', paddingLeft:'2%'}}>{dat.height}</td>
                                             </tr>
                                             <tr>
-                                                <th style={{width:'20%', borderBottom:'1px solid black'}}>Weight</th>
+                                                <th style={{width:'20%', borderBottom:'1px solid black', background:'#198754'}}>Weight</th>
                                                 <td style={{width:'80%', textAlign:'left', paddingLeft:'2%'}}>{dat.weight}</td>
                                             </tr>
                                             <tr>
-                                                <th style={{width:'20%', borderBottom:'1px solid black'}}>BMI</th>
+                                                <th style={{width:'20%', borderBottom:'1px solid black', background:'#198754'}}>BMI</th>
                                                 <td style={{width:'80%', textAlign:'left', paddingLeft:'2%'}}>{dat.bmi}</td>
                                             </tr>
                                             <tr>
-                                                <th style={{width:'20%', borderBottom:'1px solid black'}}>Visit Type</th>
+                                                <th style={{width:'20%', borderBottom:'1px solid black', background:'#198754'}}>Visit Type</th>
                                                 <td style={{width:'80%', textAlign:'left', paddingLeft:'2%'}}>{dat.type}</td>
                                             </tr>
                                             <tr>
-                                                <th style={{width:'20%', borderBottom:'1px solid black'}}>B.P</th>
+                                                <th style={{width:'20%', borderBottom:'1px solid black', background:'#198754'}}>B.P</th>
                                                 <td style={{width:'80%', textAlign:'left', paddingLeft:'2%'}}>{dat.bp}</td>
                                             </tr>
                                             <tr>
-                                                <th style={{width:'20%', borderBottom:'1px solid black'}}>Temperature</th>
+                                                <th style={{width:'20%', borderBottom:'1px solid black', background:'#198754'}}>Temperature</th>
                                                 <td style={{width:'80%', textAlign:'left', paddingLeft:'2%'}}>{dat.temperature}</td>
                                             </tr>
                                             <tr>
-                                                <th style={{width:'20%', borderBottom:'1px solid black'}}>Respiratory Rate</th>
+                                                <th style={{width:'20%', borderBottom:'1px solid black', background:'#198754'}}>Respiratory Rate</th>
                                                 <td style={{width:'80%', textAlign:'left', paddingLeft:'2%'}}>{dat.rr}</td>
                                             </tr>
                                             <tr>
-                                                <th style={{width:'20%', borderBottom:'1px solid black'}}>Complaint</th>
+                                                <th style={{width:'20%', borderBottom:'1px solid black', background:'#198754'}}>Complaint</th>
                                                 <td style={{width:'80%', textAlign:'left', paddingLeft:'2%'}}>{dat.complaint}</td>
                                             </tr>
                                             <tr>
-                                                <th style={{width:'20%', borderBottom:'1px solid black'}}>Diagnosis</th>
+                                                <th style={{width:'20%', borderBottom:'1px solid black', background:'#198754'}}>Diagnosis</th>
                                                 <td style={{width:'80%', textAlign:'left', paddingLeft:'2%'}}>{dat.diagnosis}</td>
                                             </tr>
                                             <tr>
-                                                <th style={{width:'20%', borderBottom:'1px solid black'}}>Treatment</th>
+                                                <th style={{width:'20%', borderBottom:'1px solid black', background:'#198754'}}>Treatment</th>
                                                 <td style={{width:'80%', textAlign:'left', paddingLeft:'2%'}}>{dat.treatment}</td>
                                             </tr>
                                             <tr>
-                                                <th style={{width:'20%', borderBottom:'1px solid black'}}>Date</th>
+                                                <th style={{width:'20%', borderBottom:'1px solid black', background:'#198754'}}>Date</th>
                                                 <td style={{width:'80%', textAlign:'left', paddingLeft:'2%'}}>{dat.date}</td>
                                             </tr>
                                         </tbody>
